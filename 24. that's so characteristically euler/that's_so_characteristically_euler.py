@@ -1,15 +1,18 @@
 from __future__ import print_function
 
-# height of the image
-n = raw_input()
+number_of_test_cases = int(raw_input())
 
-# width of the image
-m = raw_input()
+for _ in range(number_of_test_cases):
+    # height of the image
+    n = int(raw_input())
 
-cases = []
-for _ in range(n):
-    line = raw_input()
-    cases.append(line)
-print("cases:")
-print(cases)
-print("")
+    # width of the image
+    m = int(raw_input())
+
+    pattern = []
+    for _ in range(n):
+        line = raw_input()
+        pattern.append(line)
+    print("pattern:")
+    print(pattern)
+    print("")
