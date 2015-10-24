@@ -18,41 +18,56 @@ for _ in range(d):
 # print(words)
 # print("")
 
-potentials = []
+potential_dictionaries = []
 for _ in range(s):
     line = raw_input()
-    potentials.append(line)
-# print("potentials:")
-# print(potentials)
+    potential_dictionaries.append(line)
+# print("potential_dictionaries:")
+# print(potential_dictionaries)
 # print("")
 
 state = {}
-for potentional in potentials:
-    state[potentional] = ["", ""]
+for potential_dictionary in potential_dictionaries:
+    state[potential_dictionary] = ["", ""]
 # print("state:")
 # print(state)
 # print("")
 
-for potentional in potentials:
-    print("")
-    print(potentional)
-    potentional = list(potentional)
-    print(potentional)
+for potential_dictionary in potential_dictionaries:
+    # print("")
+    # print(potential_dictionary)
+    potential_dictionary_list = list(potential_dictionary)
+    # print(potential_dictionary_list)
 
-    seen = {}
-    for character in set(potentional):
-        seen[character] = -1
-    print(seen)
-
-    print("")
+    missing = 0
     for word in words:
-        print(word)
+        temp_potential_dictionary = list(potential_dictionary_list)
+        # print("")
+        # print(word)
+        word = list(word)
+        # print(word)
 
-        for character in word:
-            print("superlist:")
-            list_dictionary = list(state)
-            print(list_dictionary[seen[character]+1:])
-            if character in list(state)[seen[character]+1:]:
-                index = potentional.find(character)
-                print("{} found in index {}".format(character, index))
-                seen[character] = potentional.find(character)
+        temp_word = list(word)
+        for character in temp_word:
+            # print(character)
+            if character in temp_potential_dictionary:
+                word.remove(character)
+                temp_potential_dictionary.remove(character)
+            else:
+                missing += 1
+
+        # print(temp_potential_dictionary)
+        # print("missing: {}".format(missing))
+
+    if not missing:
+        state[potential_dictionary][0] = "Yes"
+    else:
+        state[potential_dictionary][0] = "No"
+        state[potential_dictionary][1] = missing
+
+
+print("state:")
+print(state)
+
+for potential_dictionary in potential_dictionaries:
+    print(state[potential_dictionary][0] + " " + str(state[potential_dictionary][1]))
