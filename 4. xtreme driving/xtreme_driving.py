@@ -7,8 +7,8 @@ units, number_of_cows = units_cows.split(" ")
 units = int(units)
 number_of_cows = int(number_of_cows)
 
-print("units: ", units)
-print("number_of_cows: ", number_of_cows)
+# print("units: ", units)
+# print("number_of_cows: ", number_of_cows)
 
 cows = []
 for _ in range(number_of_cows):
@@ -20,7 +20,7 @@ for _ in range(number_of_cows):
     cows.append( (cow_lane, cow_unit) )
 
 
-print(cows)
+# print(cows)
 
 def number_of_paths(position):
     """
@@ -53,4 +53,6 @@ def number_of_paths(position):
 
 position = (1, 1)
 
-print(number_of_paths(position))
+num_paths = number_of_paths(position)
+
+print(num_paths % (10**9 + 7))
