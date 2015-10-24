@@ -6,7 +6,7 @@ ways_of_cutting = int(raw_input())
 
 # check if there is a remaining line of input (should return "None" and exit if EOF reached)
 while ways_of_cutting:
-    # print("ways_of_cutting: {}".format(ways_of_cutting))
+    print("ways_of_cutting: {}".format(ways_of_cutting))
 
     if ways_of_cutting == 1:
         print(3)
@@ -15,9 +15,9 @@ while ways_of_cutting:
     elif ways_of_cutting == 5:
         print(5)
     else:
-        for i in range(1000):
-            if (factorial(i) / factorial(5)) * 5 == ways_of_cutting:
-                print(i)
+        for n in range(1000):
+            if factorial(2 * (n - 2)) / (factorial(n + 1 - 2) * factorial(n - 2)) == ways_of_cutting:
+                print(n)
                 break
 
     # get next line of input
