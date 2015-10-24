@@ -24,6 +24,8 @@ for _ in range(number_of_cows):
 
 def number_of_paths(position):
     """
+    TODO
+    add heuristic for blocked road
     """
     if position in cows:
         return 0
