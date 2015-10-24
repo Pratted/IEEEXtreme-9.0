@@ -1,4 +1,5 @@
 from __future__ import print_function
+from __future__ import division
 from pprint import pprint
 
 # number_of_test_cases
@@ -23,11 +24,14 @@ for _ in range(T):
 
         bookings.append( (B_s, B_e, A_i) )
 
-    print("bookings:")
-    print(bookings)
+    # print("bookings:")
+    # print(bookings)
 
-    bookings.sort(key=lambda x: x[2], reverse=True)
-    print(bookings)
+    # sort by amount
+    # bookings.sort(key=lambda x: x[2], reverse=True)
+    # sort by ratio amount over duration
+    bookings.sort(key=lambda x: x[2] / (x[1] - x[0]), reverse=True)
+    # print(bookings)
 
     break_flag = False
     booked = []
@@ -46,8 +50,8 @@ for _ in range(T):
 
         total_amount += booking[2]
 
-    print("booked:")
-    print(booked)
+    # print("booked:")
+    # print(booked)
 
-    print("total_amount:")
+    # print("total_amount:")
     print(total_amount)
