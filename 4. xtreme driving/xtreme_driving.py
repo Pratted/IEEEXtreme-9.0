@@ -21,12 +21,36 @@ for _ in range(number_of_cows):
 
 
 # print(cows)
+# cows.sort(key=lambda x: x[1])
+# print(cows)
+
+blocked = False
+
+cows_dict = {}
+for cow in cows:
+    cows_dict.setdefault(cow[1], [])
+    cows_dict[cow[1]].append(cow)
+
+# print(cows_dict)
+
+for unit in cows_dict:
+    # print("list comprehension")
+    # print([(i, unit) in cows_dict[unit] for i in range(1, 4 + 1)])
+
+    if all( [(i, unit) in cows_dict[unit] for i in range(1, 4 + 1)] ):
+        blocked = True
+
 
 def number_of_paths(position):
     """
     TODO
     add heuristic for blocked road
     """
+    global blocked
+
+    if blocked:
+        return 0
+
     if position in cows:
         return 0
 
