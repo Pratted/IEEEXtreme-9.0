@@ -27,10 +27,10 @@ for _ in range(number_of_translations):
 
 number_of_strings = int(raw_input())
 
-output = ["" for _ in range(rows)]
-# print(output)
-
 for _ in range(number_of_strings):
+    output = ["" for _ in range(rows)]
+    # print(output)
+
     string = raw_input()
 
     for character in string:
@@ -39,11 +39,10 @@ for _ in range(number_of_strings):
         for i in range(rows):
             output[i] += translation[i]
 
+    # print(output)
 
-# print(output)
+    output_string = ""
+    for line in output:
+        output_string += line + "\n"
 
-output_string = ""
-for line in output:
-    output_string += line + "\n"
-
-print(output_string.strip())
+    print(output_string.strip())
