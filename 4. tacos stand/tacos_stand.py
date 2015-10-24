@@ -16,7 +16,7 @@ for _ in range(days):
 
     tacos = 0
 
-    print(ingredients)
+    # print(ingredients)
     tacos += ingredients[1]
     tacos += min(ingredients[0] - ingredients[1], ingredients[2])
 
