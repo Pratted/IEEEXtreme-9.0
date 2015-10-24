@@ -45,8 +45,8 @@ for potential_dictionary in potential_dictionaries:
             potential_dictionary_usage[character] += 1
         else:
             potential_dictionary_usage[character] = 1
-    print("potential_dictionary_usage:")
-    print(potential_dictionary_usage)
+    # print("potential_dictionary_usage:")
+    # print(potential_dictionary_usage)
 
     original_potential_dictionary_usage = dict(potential_dictionary_usage)
 
@@ -82,9 +82,9 @@ for potential_dictionary in potential_dictionaries:
         state[potential_dictionary][0] = "No"
         state[potential_dictionary][1] = missing
 
-    print("potential_dictionary_usage:")
-    print(potential_dictionary_usage)
-    print("")
+    # print("potential_dictionary_usage:")
+    # print(potential_dictionary_usage)
+    # print("")
 
     if any(potential_dictionary_usage[key] > 0 for key in potential_dictionary_usage):
         if state[potential_dictionary][0] != "No":
@@ -94,8 +94,8 @@ for potential_dictionary in potential_dictionaries:
             state[potential_dictionary][1] = "Yes"
 
 
-print("state:")
-print(state)
+# print("state:")
+# print(state)
 
 for potential_dictionary in potential_dictionaries:
     print(state[potential_dictionary][0] + " " + str(state[potential_dictionary][1]))
