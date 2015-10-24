@@ -1,19 +1,37 @@
-string = raw_input()
+lines = []
 
-lines = string.split("\n")
+line = raw_input()
 
-def number_of_digits(number):
-    """
-    """
-    return len(number)
+while line != "END":
+    lines.append(line)
+    line = raw_input()
 
 
+# print(lines)
+
+# results = []
 
 for line in lines:
+    # print("line: ", line)
+
     if line != "END":
-        number = int(line)
         alphas = []
+
+        number = int(line)
+        # print(number)
         alphas.append(number)
-        alphas.append(number_of_digits(number))
-        if alphas[-1] == alphas[-2]:
-            return alphas[-1]
+        alphas.append(len(line))
+
+        while alphas[-1] != alphas[-2]:
+            # print(alphas)
+            # print(len(alphas) - 1)
+            # print
+
+            alphas.append(len(str(alphas[-1])))
+
+        # print(alphas)
+        # print("the smallest positive i of {} is {}".format(alphas[0], alphas[-1]))
+        print(len(alphas) - 1)
+        # print
+
+        # results.append(len(alphas) - 1)
